@@ -1,0 +1,16 @@
+3
+S A B
+4
+a b 0 1
+10
+S -> 0 S 1
+S -> 0 1
+S -> a B
+S -> b A
+A -> a S
+A -> b A A
+A -> a
+B -> b S
+B -> a B B
+B -> b
+S

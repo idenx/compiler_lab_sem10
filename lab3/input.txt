@@ -1,0 +1,7 @@
+id1 + id2 * id
+id1
+id1 + id2
+id * id
+id2 + k + id1
+id >= k + id2
+( id + k ) <> k + id / k - id
