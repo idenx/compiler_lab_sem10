@@ -1,0 +1,72 @@
+<B1>:
+i = 1
+<B2>:
+I_BEGIN0: if i > n goto I_END0
+<B3>:
+    j = 1
+<B4>:
+    J_BEGIN0: if j > n goto J_END0
+<B5>:
+        i0 = i - 1
+        j0 = j - 1
+
+        t1 = i0 * n
+        t2 = t1 + j0
+        t3 = t2 * 2 # 2 bytes per word
+        C[t3] = 0
+    j1 = j + 1
+    j = j1
+    goto J_BEGIN0
+<B6>:
+J_END0: i1 = i + 1
+i = i1
+goto I_BEGIN0
+
+<B7>:
+I_END0: i = 1
+<B8>:
+I_BEGIN1: if i > n goto I_END1
+<B9>:
+    j = 1
+<B10>:
+    J_BEGIN1: if j > n goto J_END1
+<B11>:
+        k = 1
+<B12>:
+        K_BEGIN1: if k > n goto K_END1
+<B13>:
+            i0 = i - 1
+            j0 = j - 1
+            k0 = k - 1
+
+            c1 = i0 * n
+            c2 = c1 + j0
+            c3 = c2 * 2 # 2 bytes per word
+            c4 = C[c3]
+
+            a1 = i0 * n
+            a2 = a1 + k0
+            a3 = a2 * 2 # 2 bytes per word
+            a4 = A[a3]
+
+            b1 = k0 * n
+            b2 = b1 + j0
+            b3 = b2 * 2 # 2 bytes per word
+            b4 = B[b3]
+
+            t1 = a4 * b4
+            t2 = c4 + t1
+            C[c3] = t2
+        k1 = k + 1
+        k = k1
+        goto K_BEGIN1
+<B14>:
+    K_END1: j1 = j + 1
+    j = j1
+    goto J_BEGIN1
+<B15>:
+J_END1: i1 = i + 1
+i = i1
+goto I_BEGIN1
+<B16>:
+I_END1:

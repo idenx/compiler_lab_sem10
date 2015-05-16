@@ -1,0 +1,17 @@
+.BEGIN 200
+AGAIN:      LD NEG2,R1
+            TAD FIVE,R1
+            READ NUM
+            SUB NUM,R1
+            CIR R1
+            CMP LEVEL
+            JMPGT FINAL
+            JMP AGAIN
+FINAL:      ST R1, 1A6
+            WRITE 1A6
+            HLT
+NUM:        .DATA 0
+LEVEL:      .DATA 8
+NEG2:       .DATA -2
+FIVE:       .DATA 5
+.END
